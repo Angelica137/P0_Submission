@@ -25,11 +25,8 @@ def firstText(texts):
     '''
     Returns the first record of texts
     '''
-    incoming = texts[0][0]
-    answering = texts[0][1]
-    time = texts[0][2]
-    result = "First record of texts, " + incoming + \
-        " texts " + answering + " at time " + time
+    result = "First record of texts, {} texts {} at time {}".format(
+        texts[0][0], texts[0][1], texts[0][2])
     return result
 
 
@@ -37,12 +34,8 @@ def lastCall(calls):
     '''
     Print the alst record of calls
     '''
-    incomingNo = calls[-1][0]
-    receiving = calls[-1][1]
-    time = calls[-1][2]
-    duration = calls[-1][3]
-    resultCall = "Last record of calls, " + incomingNo + " calls " + \
-        receiving + " at time " + time + ", lasting " + duration + " seconds"
+    resultCall = "Last record of calls, {} calls {} at time {}, lasting {} seconds".format(
+        calls[-1][0], calls[-1][1], calls[-1][2], calls[-1][3])
     return resultCall
 
 
