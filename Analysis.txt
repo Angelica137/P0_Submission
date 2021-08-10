@@ -1,0 +1,130 @@
+-> Task 0
+
+Big Oh Calculation firstText(texts):
+
+incoming = texts[0][0] -> 1 step
+answering = texts[0][1] -> 1 step
+time = texts[0][2] -> 1 step
+result = ... -> 1 step
+return result -> 1 step
+
+Big O = O(1)
+
+
+Big Oh Calculation lastCall(calls):
+
+incomingNo = calls[-1][0] -> 1 step
+receiving = calls[-1][1] -> 1 step
+time = calls[-1][2] -> 1 step
+duration = calls[-1][3] - 1 step
+resultCall = ... -> 1 step
+return resultCall -> 1 step
+
+Big O = O(1)
+
+
+
+-> Task 1
+
+Big Oh Calculation uniqueNumbers(texts, calls):
+
+records = texts + calls -> 1 step
+unique_numbers = [] -> 1 step
+for record in records: -> n steps
+    if record[0] not in unique_numbers: -> 1 step
+        unique_numbers.append(record[0]) -> 1 step
+    if record[1] not in unique_numbers: -> 1 step
+        unique_numbers.append(record[1]) -> 1 step
+count_unique_nos = len(unique_numbers) -> 1 step
+uniqueNosMessage = ... -> 1 step
+return uniqueNosMessage -> 1 step
+
+Big O = O(n)
+
+
+
+-> Task 2
+
+Big Oh Calculation longestCall(calls):
+
+longest_call_mins = 0 -> 1 step
+longest_call_no = '' -> 1 step
+for call in calls: -> n steps
+    minutes = int(call[3]) -> n steps
+    if minutes > longest_call_mins: -> 1step
+        longest_call_mins = minutes -> 1 step
+        longest_call_no = call[0] -> 1 step
+answer = ... -> 1 step
+return answer -> 1 step
+
+Big O = O(n) + O(n) = O(n)
+
+
+
+-> Task 3
+
+Big Oh Calculation receivingAreaCodesBangalore(calls):
+
+area_codes = [] -> 1 step
+for call in calls: -> n steps
+    if '(080)' in call[0]: -> O(n)
+        if call[1][0:3] == '140' and '140' not in area_codes: -> O(k) + 1 + O(n)
+            area_codes.append('140') -> 1 step
+        if ')' in call[1] and call[1][0:call[1].find(')') + 1] not in area_codes: -> O(k) + O(k)
+            area_codes.append(call[1][0:call[1].find(')') + 1]) -> 1 step
+        if ' ' in call[1] and call[1][0:call[1].find(' ')] not in area_codes: -> O(k) + O(k)
+            area_codes.append(call[1][0:call[1].find(' ')]) -> 1 step
+area_codes_ordered = sorted(area_codes) -> O(nlogn)
+return area_codes_ordered -> 1 step
+
+Big O = O(n)
+
+
+Big Oh Calculation callsToBangalore(calls):
+
+calls_from_bangalore = 0 -> 1 step
+count = 0 -> 1 step
+for call in calls: -> n steps
+    if '(080)' in call[0]: -> n steps
+        calls_from_bangalore += 1 -> 1 step
+        if '(080)' in call[1]: -> k steps
+            count += 1 -> 1 step
+percentage = round((count / calls_from_bangalore * 100), 2) -> 1 step (docs say todo)
+return percentage -> 1 step
+
+Big O = O(n)
+
+
+
+-> Task 4
+
+Big Oh Calculation notInTexts(calls, texts):
+
+no_texts = [] -> 1 step
+for call in calls: -> n steps
+    if call[0] not in no_texts: -> n steps
+        not_in_texts = True = 1 step
+        for text in texts: -> n steps
+            if call[0] in text: -> n steps
+                not_in_texts = False -> 1 step
+        if not_in_texts == True: -> 1 step
+            no_texts.append(call[0]) -> 1 step
+return no_texts
+
+Big O = O(n^2)
+
+
+Big Oh Calculation noIncomingCalls(numbers, calls):
+
+no_incoming_calls = [] -> 1 step
+for number in numbers: -> n steps
+    incoming_calls = False -> 1 step
+    for i in range(len(calls)): -> n steps
+        if number == calls[i][1]: -> 1 step
+            incoming_calls = True -> 1 step
+            i += 1 -> 1 step
+    if incoming_calls == False and number not in no_incoming_calls: -> 1 step + k steps
+        no_incoming_calls.append(number) -> 1 step
+return no_incoming_calls -> step
+
+Big O = O(n^2)
