@@ -25,17 +25,15 @@ def uniqueNumbers(texts, calls):
     prints how many unique numbers are there in the 
     both lists
     '''
-    records = texts + calls
-    unique_numbers = []
-    for record in records:
-        if record[0] not in unique_numbers:
-            unique_numbers.append(record[0])
-        if record[1] not in unique_numbers:
-            unique_numbers.append(record[1])
-    count_unique_nos = len(unique_numbers)
-    uniqueNosMessage = "There are " + str(count_unique_nos) + \
-        " different telephone numbers in the records."
-    return uniqueNosMessage
+    records = texts + calls  # 1 step
+    unique_numbers = set()  # 1 step
+    for record in records:  # n steps
+        unique_numbers.add(record[0])  # 1 step
+        unique_numbers.add(record[1])  # 1 step
+    count_unique_nos = len(unique_numbers)  # 1 step
+    uniqueNosCopy = "There are " + str(count_unique_nos) + \
+        " different telephone numbers in the records."  # 1 step
+    return uniqueNosCopy  # 1 step
 
 
 print(uniqueNumbers(texts, calls))
