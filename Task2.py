@@ -39,3 +39,10 @@ def longestCall(calls):
 
 
 print(longestCall(calls))
+
+
+'''
+I am unable to reproduce the expected outcome from the review notes.
+All my tests are passing and I find 46046secs
+(080)33251027 with 
+'''

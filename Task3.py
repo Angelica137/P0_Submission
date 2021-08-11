@@ -54,8 +54,8 @@ def receivingAreaCodesBangalore(calls):
                 area_codes.append('140')
             if ')' in call[1] and call[1][0:call[1].find(')') + 1] not in area_codes:
                 area_codes.append(call[1][0:call[1].find(')') + 1])
-            if ' ' in call[1] and call[1][0:call[1].find(' ')] not in area_codes:
-                area_codes.append(call[1][0:call[1].find(' ')])
+            if ' ' in call[1] and call[1][0:4] not in area_codes:
+                area_codes.append(call[1][0:4])
     area_codes_ordered = sorted(area_codes)
     return area_codes_ordered
 
