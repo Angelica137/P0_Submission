@@ -46,45 +46,38 @@ The percentage should have 2 decimal digits
 """
 
 
-def receivingAreaCodesBangalore(calls):
-    area_codes = []
-    for call in calls:
+def callsFromBangalore(calls):
+    area_codes = []  # O(1)
+    for call in calls:  # O(n)
         if '(080)' in call[0]:
-            if call[1][0:3] == '140' and '140' not in area_codes:
+            if call[1][0:3] == '140':  # O(1)
                 area_codes.append('140')
-            if ')' in call[1] and call[1][0:call[1].find(')') + 1] not in area_codes:
+            if ')' in call[1]:
                 area_codes.append(call[1][0:call[1].find(')') + 1])
-            if ' ' in call[1] and call[1][0:4] not in area_codes:
+            if ' ' in call[1]:
                 area_codes.append(call[1][0:4])
-    area_codes_ordered = sorted(area_codes)
-    return area_codes_ordered
+    unique_codes = set(area_codes)  # O(1)
+    sort_codes = sorted(unique_codes)  # O(n log n)
+    bangalore_pc = round(
+        (area_codes.count('(080)')/len(area_codes) * 100), 2)  # O(1)
+    return sort_codes, bangalore_pc  # O(1)
 
 
-def callsToBangalore(calls):
-    calls_from_bangalore = 0
-    count = 0
-    for call in calls:
-        if '(080)' in call[0]:
-            calls_from_bangalore += 1
-            if '(080)' in call[1]:
-                count += 1
-    percentage = round((count / calls_from_bangalore * 100), 2)
-    return percentage
-
+answers = callsFromBangalore(calls)
 
 '''
 Answer Part A
 '''
-codes = receivingAreaCodesBangalore(calls)
-copyA = "The numbers called by people in Bangalore have codes:"
-print(copyA)
-for elem in codes:
+
+copy_a = "The numbers called by people in Bangalore have codes:"
+print(copy_a)
+for elem in answers[0]:
     print(elem)
 
 
 '''
 Answer part B
 '''
-percentage_bangalore = callsToBangalore(calls)
-copyB = " percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore."
-print(str(percentage_bangalore) + copyB)
+
+print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(
+    answers[1]))
