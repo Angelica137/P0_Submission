@@ -20,7 +20,7 @@ Print a message:
 """
 
 
-def uniqueNumbers(texts, calls):
+def unique_numbers(texts, calls):
     '''
     prints how many unique numbers are there in the 
     both lists
@@ -31,9 +31,9 @@ def uniqueNumbers(texts, calls):
         unique_numbers.add(record[0])  # 1 step
         unique_numbers.add(record[1])  # 1 step
     count_unique_nos = len(unique_numbers)  # 1 step
-    uniqueNosCopy = "There are " + str(count_unique_nos) + \
-        " different telephone numbers in the records."  # 1 step
-    return uniqueNosCopy  # 1 step
+    unique_nums_copy = "There are {} different telephone numbers in the records.".format(
+        count_unique_nos)  # 1 step + O(n)
+    return unique_nums_copy  # 1 step
 
 
-print(uniqueNumbers(texts, calls))
+print(unique_numbers(texts, calls))
