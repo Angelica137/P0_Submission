@@ -39,8 +39,8 @@ def find_telemarketers(calls, texts):
     for text in texts:  # O(n)
         incoming_calls_texts.add(text[0])  # O(1)
         incoming_calls_texts.add(text[1])  # O(1)
-    telemarketers = outgoing_calls - incoming_calls_texts  # O(1)
-    result = sorted(telemarketers)
+    telemarketers = outgoing_calls - incoming_calls_texts  # O(n)
+    result = sorted(telemarketers)  # O(n log n)
     return result  # O(1)
 
 
