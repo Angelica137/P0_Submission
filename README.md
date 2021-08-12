@@ -15,3 +15,5 @@ https://note.nkmk.me/en/python-function-return-multiple-values/
 https://wiki.python.org/moin/TimeComplexity
 
 https://newbedev.com/runtime-of-python-s-if-substring-in-string
+
+https://blog.finxter.com/python-set-difference/#:~:text=%3E%20s%20%7B3%7D-,What%20is%20the%20Time%20Complexity%20of%20Set%20difference()%3F,member%20of%20the%20second%20set.
