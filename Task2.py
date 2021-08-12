@@ -25,31 +25,24 @@ def longest_call(calls):
     '''
     returns the number that spent the longest time on the phone this period
     '''
-    call_times = {}  # O(1)
+    call_times = {}
     count = 0
-    for call in calls:  # O(n)
+    for call in calls:
         # if number not in dicitonary
-        if call[0] in call_times:  # O(n)
-            call_times[call[0]] += int(call[3])  # 1 step + O(n)
-        if call[1] in call_times:  # O(n)
-            call_times[call[1]] += int(call[3])  # 1 step + O(n)
+        if call[0] in call_times:
+            call_times[call[0]] += int(call[3])
+        if call[1] in call_times:
+            call_times[call[1]] += int(call[3])
         # if number in dicitonary
         if call[0] not in call_times:  # O(n)
-            call_times[call[0]] = int(call[3])  # 1 step + O(n)
+            call_times[call[0]] = int(call[3])
         if call[1] not in call_times:
-            call_times[call[1]] = int(call[3])  # 1 step + O(n)
-    max_time = max(call_times.values())  # O(n)
+            call_times[call[1]] = int(call[3])
+    max_time = max(call_times.values())
     number = [k for k, v in call_times.items() if v == max_time][0]  # O(n) + 1
     copy = "{} spent the longest time, {} seconds, on the phone during September 2016."  # 1 step
-    answer_task2 = copy.format(number, max_time)  # 1 step + O(n)?
-    return answer_task2  # 1 step
+    answer_task2 = copy.format(number, max_time)
+    return answer_task2
 
 
 print(longest_call(calls))
-
-
-'''
-I am unable to reproduce the expected outcome from the review notes.
-All my tests are passing and I find 46046secs
-(080)33251027 with 
-'''
