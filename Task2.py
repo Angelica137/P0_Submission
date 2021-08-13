@@ -32,7 +32,7 @@ def longest_call(calls):
         telephone_nos[calls[i][1]] = telephone_nos.get(
             calls[i][1], 0) + int(calls[i][-1])  # O(1)
     max_telephone_num = max(
-        telephone_nos, key=lambda x: telephone_nos.get(x))  # O(1)
+        telephone_nos, key=lambda x: telephone_nos.get(x))  # O(n)
     max_duration = telephone_nos.get(max_telephone_num)  # O(1)
     return max_telephone_num, max_duration  # O(1)
 
