@@ -1,6 +1,6 @@
 -> Task 0
 
-* Worst case complexity firstText(texts): O(n)
+* Worst case complexity firstText(texts): O(1)
 * Algorithm
 		* initialise results variable (complexity: O(1))
 		* access list element (complexity: O(1))
@@ -10,18 +10,15 @@
     * return result (complexity: O(1))
     
 
-* Worst case complexity lastCall(calls): O(n)
+* Worst case complexity lastCall(calls): O(1)
 * Algorithm
-		* initialise results variable (complexity: O(n))
+		* initialise results variable (complexity: O(1))
 		* access list element (complexity: O(1))
 		* access list element (complexity: O(1))
 		* access list element (complexity: O(1))
 		* use .format() to add vars to string (complexity: O(n))
     * return result (complexity: O(1))
 
-
-I am not sure about the time complexity of .format(), I think 
-it should be O(n)
 
 -> Task 1
 
@@ -38,20 +35,20 @@ it should be O(n)
 
 -> Task 2
 
-* Worst case complexity longestCall(calls): O(n^2)
+* Worst case complexity longestCall(calls): O(n)
 * Algorithm
 		* initialise an empty dictionary (complexity: O(1))
 		* map through calls (complexity: O(n))
-    		*if outgoing number found (complexity: O(n))
+    		*if outgoing number found in dictionary (complexity: O(1))
             * add key value pair to dictionary (complexity: O(1))
             * transform string to int (complexity: O(n))
-        * if incoming number found (complexity: O(n)) 
+        * if incoming number found in dictionary (complexity: O(1)) 
             * add key value pair to dictionary (complexity: O(1))
             * transform string to int (complexity: O(n))
-        * if outgoing number not in dictionary (complexity: O(n))
+        * if outgoing number not in dictionary (complexity: O(1))
             * transform string to int (complexity: O(n))
             * increase value (complexity: O(1))
-        * if outgoing number not in dictionary (complexity: O(n))
+        * if outgoing number not in dictionary (complexity: O(1))
             * transform string to int (complexity: O(n))
             * increase value (complexity: O(1))
 		* get max value from dictionary (complexity: O(n))
